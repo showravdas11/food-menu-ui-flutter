@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:menu_ui_design/menuList/food_list.dart';
+import 'package:menu_ui_design/models/food.dart';
 import 'package:menu_ui_design/theme/theme.dart';
 
 void main() {
@@ -11,6 +13,58 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // menuarray
+
+    List FoodMenu = [
+      Food(
+          name: "Nigirizushi",
+          price: "30",
+          imagePath:
+              "https://static.vecteezy.com/system/resources/previews/016/774/832/non_2x/japanese-food-sushi-illustration-free-png.png",
+          ratting: "4.4"),
+      Food(
+          name: "makizushi",
+          price: "30",
+          imagePath:
+              "https://static.vecteezy.com/system/resources/previews/016/774/832/non_2x/japanese-food-sushi-illustration-free-png.png",
+          ratting: "4.4"),
+      Food(
+          name: "Inarizushi",
+          price: "30",
+          imagePath:
+              "https://static.vecteezy.com/system/resources/previews/016/774/832/non_2x/japanese-food-sushi-illustration-free-png.png",
+          ratting: "4.4"),
+      Food(
+          name: "Chirashizushi",
+          price: "30",
+          imagePath:
+              "https://static.vecteezy.com/system/resources/previews/016/774/832/non_2x/japanese-food-sushi-illustration-free-png.png",
+          ratting: "4.4"),
+      Food(
+          name: "Temaki",
+          price: "30",
+          imagePath:
+              "https://static.vecteezy.com/system/resources/previews/016/774/832/non_2x/japanese-food-sushi-illustration-free-png.png",
+          ratting: "4.4"),
+      Food(
+          name: "California roll",
+          price: "30",
+          imagePath:
+              "https://static.vecteezy.com/system/resources/previews/016/774/832/non_2x/japanese-food-sushi-illustration-free-png.png",
+          ratting: "4.4"),
+      Food(
+          name: "Oshizushi",
+          price: "30",
+          imagePath:
+              "https://static.vecteezy.com/system/resources/previews/016/774/832/non_2x/japanese-food-sushi-illustration-free-png.png",
+          ratting: "4.4"),
+      Food(
+          name: "Hosomaki",
+          price: "30",
+          imagePath:
+              "https://static.vecteezy.com/system/resources/previews/016/774/832/non_2x/japanese-food-sushi-illustration-free-png.png",
+          ratting: "4.4"),
+    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -44,7 +98,7 @@ class MyApp extends StatelessWidget {
             children: [
               // quotes
 
-              Padding(padding: const EdgeInsets.only(top: 50)),
+              Padding(padding: const EdgeInsets.only(top: 20)),
               Container(
                 decoration: BoxDecoration(
                     color: primaryColor,
@@ -92,19 +146,34 @@ class MyApp extends StatelessWidget {
               ),
 
               SizedBox(
-                height: 30,
+                height: 20,
               ),
 
               //menu
 
-              const Text ("Our Menu is Here",
+              const Text(
+                "Our Menu is Here",
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(238, 0, 0, 0)),
               ),
 
-              SizedBox(height: 30,)
+              SizedBox(
+                height: 30,
+              ),
+
+              Expanded(
+                child: GridView.builder(
+                  itemCount: FoodMenu.length,
+                  shrinkWrap: true,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                    ),
+                    itemBuilder: (context, index) => FoodList(food: FoodMenu[index])),
+              ),
             ],
           )),
     );
