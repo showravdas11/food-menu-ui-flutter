@@ -40,9 +40,6 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-
-
-
           body: Column(
             children: [
               // quotes
@@ -69,17 +66,19 @@ class MyApp extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 20.0),
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color.fromARGB(255, 255,
-                                    255, 255), 
-                                foregroundColor: const Color.fromARGB(
-                                    255, 0, 0, 0),
-                                    padding: EdgeInsets.all(20)
-                              ),
+                                  backgroundColor:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  foregroundColor:
+                                      const Color.fromARGB(255, 0, 0, 0),
+                                  padding: EdgeInsets.all(20)),
                               // style: ButtonStyle(backgroundColor: Colors.amber),
                               onPressed: () {
                                 print("clicked");
                               },
-                              child: Text("Welcome to Our Menu", style: TextStyle(fontWeight: FontWeight.w800),)),
+                              child: Text(
+                                "Welcome to Our Menu",
+                                style: TextStyle(fontWeight: FontWeight.w800),
+                              )),
                         )
                       ],
                     ),
@@ -92,12 +91,20 @@ class MyApp extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 25,),
-
+              SizedBox(
+                height: 30,
+              ),
 
               //menu
 
-              Text("Our Menu is Here")
+              const Text ("Our Menu is Here",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(238, 0, 0, 0)),
+              ),
+
+              SizedBox(height: 30,)
             ],
           )),
     );
